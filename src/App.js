@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
-
+import PrivateRoute from "./components/privateRoute";
+import PublicRoute from "./components/publicRoute";
+import { Switch } from "wouter";
+import "react-toastify/dist/ReactToastify.css";
+import { privateRoutes, publicRoutes } from "./utils/routes";
+import { ToastContainer } from "react-toastify";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Switch>
+        {privateRoutes.map((route, index) => {
+          return (
+            <PrivateRoute
+              key={index}
+              path={route.path}
+              component={route.component}
+            />
+          );
+        })}
+        {publicRoutes.map((route, index) => {
+          return (
+            <PublicRoute
+              key={index}
+              path={route.path}
+              component={route.component}
+            />
+          );
+        })}
+      </Switch>
+      <ToastContainer />
     </div>
   );
 }

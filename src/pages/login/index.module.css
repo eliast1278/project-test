@@ -1,0 +1,16 @@
+.c-mainContainer {
+  background-color: #163172;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.c-registerInner {
+  background-color: #d6e4f0;
+  color: #000;
+  min-height: 200px;
+  width: 500px;
+  border-radius: 5px;
+  padding: 25px;
+}

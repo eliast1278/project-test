@@ -1,0 +1,7 @@
+.c-mainHeader {
+    height: 65px;
+}
+
+.c-mainContainer {
+    height: calc(100vh - 65px);
+}
